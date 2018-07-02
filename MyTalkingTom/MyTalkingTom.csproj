@@ -1,0 +1,626 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{52C9D380-475A-48CC-AF99-68BA7C40C370}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>MyTalkingTom</RootNamespace>
+    <AssemblyName>MyTalkingTom</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Models\Bath.cs" />
+    <Compile Include="Models\Clothes.cs" />
+    <Compile Include="Models\FoodInMarket.cs" />
+    <Compile Include="Managers\FileManager.cs" />
+    <Compile Include="Managers\FormManager.cs" />
+    <Compile Include="Managers\TimeManager.cs" />
+    <Compile Include="MarketForms\DessertsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MarketForms\DessertsForm.Designer.cs">
+      <DependentUpon>DessertsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MarketForms\DrinksForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MarketForms\DrinksForm.Designer.cs">
+      <DependentUpon>DrinksForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MarketForms\FastFoodsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MarketForms\FastFoodsForm.Designer.cs">
+      <DependentUpon>FastFoodsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MarketForms\FruitsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MarketForms\FruitsForm.Designer.cs">
+      <DependentUpon>FruitsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MarketForms\MedicinesForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MarketForms\MedicinesForm.Designer.cs">
+      <DependentUpon>MedicinesForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Light.cs" />
+    <Compile Include="Models\Toilet.cs" />
+    <Compile Include="Models\Wardrove.cs" />
+    <Compile Include="OtherForms\LaunchForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OtherForms\LaunchForm.Designer.cs">
+      <DependentUpon>LaunchForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OtherForms\WardroveForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OtherForms\WardroveForm.Designer.cs">
+      <DependentUpon>WardroveForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="RoomForms\Kitchen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RoomForms\Kitchen.Designer.cs">
+      <DependentUpon>Kitchen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RoomForms\Livingroom.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RoomForms\Livingroom.Designer.cs">
+      <DependentUpon>Livingroom.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MarketForms\MarketForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MarketForms\MarketForm.Designer.cs">
+      <DependentUpon>MarketForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RoomForms\Bathroom.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RoomForms\Bathroom.Designer.cs">
+      <DependentUpon>Bathroom.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RoomForms\PlayForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RoomForms\PlayForm.Designer.cs">
+      <DependentUpon>PlayForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainProgram.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RoomForms\Bedroom.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RoomForms\Bedroom.Designer.cs">
+      <DependentUpon>Bedroom.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\RoundPictureBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="OtherForms\SignInForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OtherForms\SignInForm.Designer.cs">
+      <DependentUpon>SignInForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Statistics.cs" />
+    <Compile Include="Models\Tom.cs" />
+    <EmbeddedResource Include="MarketForms\DessertsForm.resx">
+      <DependentUpon>DessertsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MarketForms\DrinksForm.resx">
+      <DependentUpon>DrinksForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MarketForms\FastFoodsForm.resx">
+      <DependentUpon>FastFoodsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MarketForms\FruitsForm.resx">
+      <DependentUpon>FruitsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MarketForms\MedicinesForm.resx">
+      <DependentUpon>MedicinesForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OtherForms\LaunchForm.resx">
+      <DependentUpon>LaunchForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OtherForms\WardroveForm.resx">
+      <DependentUpon>WardroveForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RoomForms\Kitchen.resx">
+      <DependentUpon>Kitchen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RoomForms\Livingroom.resx">
+      <DependentUpon>Livingroom.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RoomForms\PlayForm.resx">
+      <DependentUpon>PlayForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RoomForms\Bathroom.resx">
+      <DependentUpon>Bathroom.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MarketForms\MarketForm.resx">
+      <DependentUpon>MarketForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RoomForms\Bedroom.resx">
+      <DependentUpon>Bedroom.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OtherForms\SignInForm.resx">
+      <DependentUpon>SignInForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="AxWMPLib">
+      <Guid>{6BF52A50-394A-11D3-B153-00C04F79FAA6}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>aximp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+    <COMReference Include="WMPLib">
+      <Guid>{6BF52A50-394A-11D3-B153-00C04F79FAA6}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Button\1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Button\2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Button\3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Button\4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Button\5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Button\6.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Button\7.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Button\8.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Button\9.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Button\10.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Button\11.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Button\12.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Button\13.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Button\Bathroom.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Button\Bedroom.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Button\Bedroom_LightOff.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Button\Bedroom_LightOn.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Button\Kitchen.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Button\Kitchen_Back.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Button\Kitchen_Next.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Button\Livingroom_Happy.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Button\Livingroom_Sad.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Button\Market.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Button\PlayGame.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Button\SoundOff.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Button\SoundOn.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Food\Desserts\dessert_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Food\Desserts\dessert_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Food\Desserts\dessert_3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Food\Desserts\dessert_4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Food\Desserts\dessert_5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Food\Desserts\dessert_6.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Food\Drinks\drink_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Food\Drinks\drink_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Food\Drinks\drink_3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Food\Drinks\drink_4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Food\Fruits\fruit_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Food\Fruits\fruit_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Food\Fruits\fruit_3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Food\Fruits\fruit_4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Food\Fruits\fruit_5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Food\MainCourses\mainCourse_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Food\MainCourses\mainCourse_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Food\MainCourses\mainCourse_3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Food\MainCourses\mainCourse_4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Food\MainCourses\mainCourse_5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Food\MainCourses\mainCourse_6.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Food\MainCourses\mainCourse_7.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Food\MainCourses\mainCourse_8.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Room\Bedroom\Bedroom_Light.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Room\Bedroom\Bedroom_LightOff.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Room\Bedroom\Bedroom_LightOn.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Room\Kitchen\Kitchen.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Room\Kitchen\Kitchen_DiningTable.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Room\Kitchen\Untitled-5.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Room\Livingroom\Livingroom_Day.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Room\Livingroom\Livingroom_Night.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sound\Thornmail.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Button\btn_bathroom.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Button\btn_bedroom.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Button\btn_bedroom_LightOff.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Button\btn_bedroom_LightOn.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Button\btn_kitchen.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Button\btn_kitchen_Back.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Button\btn_kitchen_Next.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Button\btn_livingroom_Happy.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Button\btn_livingroom_Sad.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Button\btn_market.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Button\btn_playGame.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Button\btn_SoundOff.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Button\btn_SoundOn.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Launching.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ListGame.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ListItem.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SignIn.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Market.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ShopIcon\shop_icon_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ShopIcon\shop_icon_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ShopIcon\shop_icon_3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ShopIcon\shop_icon_4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ShopIcon\shop_icon_5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Room\Bathroom\Bathroom_Close.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Room\Bathroom\Bathroom_Open.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MyTom.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Room\Bathroom\Bathroom_Wash.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MineSweeper\MS_0.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MineSweeper\MS_1.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MineSweeper\MS_2.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MineSweeper\MS_3.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MineSweeper\MS_4.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MineSweeper\MS_5.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MineSweeper\MS_6.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MineSweeper\MS_7.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MineSweeper\MS_8.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MineSweeper\MS_ClickSmile.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MineSweeper\MS_Eploded.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MineSweeper\MS_Flag.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MineSweeper\MS_Loser.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MineSweeper\MS_Mine.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MineSweeper\MS_Smile.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MineSweeper\MS_Square.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MineSweeper\MS_Winner.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MineSweeper\MS_Wow.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MineSweeper\MS_WrongFlag.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\info_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\close_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Room\Bathroom\Bathroom.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Room\Bathroom\Bathroom_Toilet.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Room\Bathroom\Bathroom_Bath.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Clothes\clothes %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Clothes\clothes %282%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Clothes\clothes %283%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Clothes\clothes %284%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Clothes\clothes %285%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Clothes\clothes %286%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Clothes\clothes %287%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Clothes\clothes %288%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Room\Bedroom\533.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Room\Bedroom\ngủ.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Game\game %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Game\game %282%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Game\game %283%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Game\game %284%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Game\game %285%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Game\game %286%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Game\game %287%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Room\Bedroom\Bedroom_Wardrove.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sound\BackgroundSound1.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sound\BackgroundSound2.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sound\BackgroundSound3.wav" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
